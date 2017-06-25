@@ -5,8 +5,6 @@ import PerfectHTTPServer
 let server = HTTPServer()
 server.serverPort = 8080
 
-server.documentRoot = "webroot"
-
 func returnJSONKeyValue(_ dictionary: [String : String], response: HTTPResponse) {
 	do {
 		try response.setBody(json: dictionary)
@@ -20,7 +18,34 @@ func returnJSONKeyValue(_ dictionary: [String : String], response: HTTPResponse)
 
 var routes = Routes()
 
+// Default (Returns Plain, Title, and SpongeBob)
+routes.add(method: .get, uri: "/{input}", handler: {
+	request, response in
+	
+	guard let inputString = request.urlVariables["input"] else {
+		response.completed(status: .badRequest)
+		return
+	}
+	
+	if inputString == "" {
+		response.completed(status: .badRequest)
+		return
+	}
+	
+	let textCase = TextCase()
+	
+	let title = textCase.titleCase(input: inputString)
+	let spongebob = textCase.spOngeBob(input: inputString)
+	
+	returnJSONKeyValue(["plain" : inputString,
+	                    "title" : title,
+	                    "spongebob" : spongebob],
+	                   response: response)
+	
+})
 
+
+// Title Case
 routes.add(method: .get, uri: "/title/{input}", handler: {
 	request, response in
 	
@@ -44,6 +69,7 @@ routes.add(method: .get, uri: "/title/{input}", handler: {
 	
 })
 
+// SpongeBob Case
 routes.add(method: .get, uri: "/spongebob/{input}", handler: {
 	request, response in
 	
