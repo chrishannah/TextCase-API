@@ -4,6 +4,8 @@ import PerfectHTTPServer
 
 let server = HTTPServer()
 server.serverPort = 8080
+//server.serverAddress = "http://chrishannah.me/titlecaseapi"
+server.documentRoot = "webroot"
 
 func returnJSONKeyValue(_ dictionary: [String : String], response: HTTPResponse) {
 	do {
