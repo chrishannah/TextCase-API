@@ -23,7 +23,11 @@ GET **/title/{input text}**
 
 Example response:
 
-{"title":"Hello I Am the TitleCase Api"}
+    {
+    "plain":"hello i am the TitleCase api",
+    "title":"Hello I Am the TitleCase Api"
+    }
+    {"title":"Hello I Am the TitleCase Api"}
 
 ### SpongeBob
 
@@ -33,4 +37,7 @@ GET **/spongebob/{input text}**
 
 Example response:
 
-{"spongebob":"ThIS is tHe bESt servIce for quiCk TeXt forMatting"}
+    {
+        "plain":"added mocking spongebob support",
+        "spongebob":"aDded mocKinG SPongeBoB sUpPORT"
+    }

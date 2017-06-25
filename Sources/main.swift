@@ -17,6 +17,8 @@ func returnJSONKeyValue(_ dictionary: [String : String], response: HTTPResponse)
 }
 
 var routes = Routes()
+
+
 routes.add(method: .get, uri: "/title/{input}", handler: {
 	request, response in
 	
@@ -29,7 +31,9 @@ routes.add(method: .get, uri: "/title/{input}", handler: {
 	
 	let title = textCase.titleCase(input: inputString)
 	
-	returnJSONKeyValue(["title" : title], response: response)
+	returnJSONKeyValue(["plain" : inputString,
+	                    "title" : title],
+	                   response: response)
 	
 })
 
@@ -45,7 +49,9 @@ routes.add(method: .get, uri: "/spongebob/{input}", handler: {
 	
 	let spongebob = textCase.spOngeBob(input: inputString)
 	
-	returnJSONKeyValue(["spongebob" : spongebob], response: response)
+	returnJSONKeyValue(["plain" : inputString,
+	                    "spongebob" : spongebob],
+	                   response: response)
 	
 })
 
