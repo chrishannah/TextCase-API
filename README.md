@@ -1,6 +1,6 @@
 # TextCase API
 
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://travis-ci.org/chrishannah/TextCase-API)
+[![Travis](https://travis-ci.org/chrishannah/TextCase-API.svg?branch=master)](https://travis-ci.org/chrishannah/TextCase-API)
 ![Swift](https://img.shields.io/badge/Swift-3.1-red.svg)
 [![Twitter](https://img.shields.io/badge/Twitter-@chrishannah-blue.svg)](http://twitter.com/chrishannah)
 
