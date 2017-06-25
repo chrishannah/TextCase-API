@@ -11,10 +11,7 @@ It uses the [Perfect](http://perfect.org) toolkit, and is actually just a learni
 The current options are:
 
 - TitleCase
-
-Planned:
-
-- SpongeBob CaseE
+- Mocking SpongeBob
 
 ## Usage
 
@@ -27,3 +24,13 @@ GET **/title/{input text}**
 Example response:
 
 {"title":"Hello I Am the TitleCase Api"}
+
+### SpongeBob
+
+Return a string formatted like the popular mocking SpongeBob memes. The results are random, so it's possible to get multiple formats for the same string.
+
+GET **/spongebob/{input text}**
+
+Example response:
+
+{"spongebob":"ThIS is tHe bESt servIce for quiCk TeXt forMatting"}

@@ -5,9 +5,9 @@ import PerfectHTTPServer
 let server = HTTPServer()
 server.serverPort = 8080
 
-func returnJSONKeyValue(key: String, value: String, response: HTTPResponse) {
+func returnJSONKeyValue(_ dictionary: [String : String], response: HTTPResponse) {
 	do {
-		try response.setBody(json: [key : value])
+		try response.setBody(json: dictionary)
 			.setHeader(.contentType, value: "application/json")
 			.completed()
 	} catch {
@@ -29,7 +29,23 @@ routes.add(method: .get, uri: "/title/{input}", handler: {
 	
 	let title = textCase.titleCase(input: inputString)
 	
-	returnJSONKeyValue(key: "title", value: title, response: response)
+	returnJSONKeyValue(["title" : title], response: response)
+	
+})
+
+routes.add(method: .get, uri: "/spongebob/{input}", handler: {
+	request, response in
+	
+	guard let inputString = request.urlVariables["input"] else {
+		response.completed(status: .badRequest)
+		return
+	}
+	
+	let textCase = TextCase()
+	
+	let spongebob = textCase.spOngeBob(input: inputString)
+	
+	returnJSONKeyValue(["spongebob" : spongebob], response: response)
 	
 })
 
