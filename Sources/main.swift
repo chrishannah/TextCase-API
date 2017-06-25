@@ -4,7 +4,7 @@ import PerfectHTTPServer
 
 let server = HTTPServer()
 server.serverPort = 8080
-//server.serverAddress = "http://chrishannah.me/titlecaseapi"
+
 server.documentRoot = "webroot"
 
 func returnJSONKeyValue(_ dictionary: [String : String], response: HTTPResponse) {
@@ -25,6 +25,11 @@ routes.add(method: .get, uri: "/title/{input}", handler: {
 	request, response in
 	
 	guard let inputString = request.urlVariables["input"] else {
+		response.completed(status: .badRequest)
+		return
+	}
+	
+	if inputString == "" {
 		response.completed(status: .badRequest)
 		return
 	}
