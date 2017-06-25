@@ -10,11 +10,9 @@ It uses the [Perfect](http://perfect.org) toolkit, and is actually just a learni
 
 The current options are:
 
-- (None yet 😜)
+- TitleCase
 
 Planned:
 
-- TitleCase
 - SpongeBob Case
-- URL Encoding
 
