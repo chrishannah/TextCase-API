@@ -14,5 +14,16 @@ The current options are:
 
 Planned:
 
-- SpongeBob Case
+- SpongeBob CaseE
 
+## Usage
+
+### Title
+
+Return a formatted version of a string of text, similar to [John Grubers TitleCase](https://daringfireball.net/2008/05/title_case), except implemented myself.
+
+GET **/title/{input text}**
+
+Example response:
+
+{"title":"Hello I Am the TitleCase Api"}
