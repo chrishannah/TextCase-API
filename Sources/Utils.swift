@@ -16,6 +16,6 @@ import Foundation
 	import SwiftGlibc
 	
 	public func arc4random_uniform(_ max: UInt32) -> UInt32 {
-		return (SwiftGlibc.rand() % Int32(max-1))
+		return (SwiftGlibc.rand() % UInt32(max-1))
 	}
 #endif
