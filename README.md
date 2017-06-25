@@ -27,7 +27,6 @@ Example response:
     "plain":"hello i am the TitleCase api",
     "title":"Hello I Am the TitleCase Api"
     }
-    {"title":"Hello I Am the TitleCase Api"}
 
 ### SpongeBob
 
