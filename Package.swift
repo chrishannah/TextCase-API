@@ -3,5 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "TextCase-API"
+    name: "TextCase-API",
+    dependencies: [
+		.Package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", majorVersion: 2)]
 )
