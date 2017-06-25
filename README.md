@@ -24,8 +24,8 @@ GET **/title/{input text}**
 Example response:
 
     {
-    "plain":"hello i am the TitleCase api",
-    "title":"Hello I Am the TitleCase Api"
+        "plain" : "hello i am the TitleCase api",
+        "title" : "Hello I Am the TitleCase Api"
     }
 
 ### SpongeBob
@@ -37,6 +37,22 @@ GET **/spongebob/{input text}**
 Example response:
 
     {
-        "plain":"added mocking spongebob support",
-        "spongebob":"aDded mocKinG SPongeBoB sUpPORT"
+        "plain" : "added mocking spongebob support",
+        "spongebob" : "aDded mocKinG SPongeBoB sUpPORT"
     }
+
+### Default
+
+Return all the available formats for a given theme.
+
+GET **/{input text}**
+
+Example response:
+
+    {
+        "plain" : "what the hell is this",
+        "title" : "What the Hell Is This",
+        "spongebob" : "wHAT ThE Hell iS thiS"
+    }
+
+
